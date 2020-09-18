@@ -1,0 +1,61 @@
+.header{
+    border: 1px solid black;
+    height: 700px;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+
+.logo{
+    height: 70px;
+    filter: brightness(800%);
+}
+
+.input-filed {
+    border: 1px dotted white;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    background: transparent;
+    background : rgba(207, 203, 203, 0.356);
+    color: white;
+}
+.container {
+    margin-bottom: 80px;
+}
+.title {
+    position: absolute;
+    bottom: 90px;
+    right:50px;
+    text-align: center;
+    color: white;
+}
+
+::-webkit-input-placeholder{
+    color: white;
+}
+.input-aria {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.input-type {
+    width: 100%;
+    background-color: lightgray;
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+.input-button {
+    width: 100%;
+    background-color: orange;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
