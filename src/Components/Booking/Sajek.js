@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../Logo.png';
 import Home from '../Home/Home.css';
 import Rectangle from '../../Image/Rectangle.png';
-import { Link } from 'react-router-dom';
+import { Link ,useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -24,6 +24,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Sajek = () => {
+    const history = useHistory()
+    const handleFormSubmit = (e) => {
+        e.preventDefault()
+        history.push("/booking")
+    }
     const classes = useStyles();
     return (
      
@@ -53,17 +58,18 @@ const Sajek = () => {
         </div>
         <div className="container">
               <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 mt-3">
                       <h1 className="text-white">Sajek Valley</h1>
                       <p className="text-white">Sajek Valley is an emerging tourist spot in Bangladesh situated among the hills of the Kasalong range of mountains in Sajek union, Baghaichhari Upazila in Rangamati District. The valley is 1,476 feet above sea level. Sajek valley is known as the Queen of Hills  Roof of Rangamati.</p>
                       <button className="btn btn-warning">Booking --></button>
                   </div>
                    <div className="col-md-6">
+                       <form onSubmit={handleFormSubmit}>
                         <div className="input-aria">
                             <p>Origin</p>
-                            <input class="input-type" type="text" name="" />
+                            <input class="input-type" type="text" name=""  required/>
                             <p>Destination</p>
-                            <input class="input-type" type="text" />
+                            <input class="input-type" type="text"  required/>
                             <div className="row">
                                 <div className="col-md-6">
                                     <p>From</p>
@@ -95,8 +101,9 @@ const Sajek = () => {
                                 </div>
                             </div>
                             <br/>
-                            <Link to="/booking"><input className="input-button" type="Start Booking" value="Start Booking"/></Link>
+                            <input className="input-button" type="submit" value="Start Booking"/>
                             </div>
+                            </form>
                             <br/>
               </div>
           </div>

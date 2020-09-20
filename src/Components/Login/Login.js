@@ -9,7 +9,7 @@ import fb from '../../Icon/fb.png';
 import google from '../../Icon/google.png';
 
 const Login = () => {
-    const [LoginUser, setLoginUser] = useContext(UserContext)
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [newUser,setNewUser]= useState(false)
     const [user, setUser] = useState({
         isSignedIn: false,
@@ -32,7 +32,7 @@ const Login = () => {
     firebase.auth().signInWithPopup(Googleprovider).then(function(result) {
         const {displayName, email} = result.user;
         const signedInUser = {name: displayName, email}
-        setLoginUser(signedInUser);
+        setLoggedInUser(signedInUser);
         history.replace(from);
 
         }).catch(function(error) {
@@ -49,7 +49,7 @@ const Login = () => {
         firebase.auth().signInWithPopup(Fbprovider).then(function(result) {
             const {displayName, email} = result.user;
             const signedInUser = {name: displayName, email}
-            setLoginUser(signedInUser);
+            setLoggedInUser(signedInUser);
             history.replace(from);
             // ...
           }).catch(function(error) {
@@ -115,7 +115,7 @@ const Login = () => {
               newUserInfo.error='';
               newUserInfo.success=true;
               setUser(newUserInfo)
-              setLoginUser(newUserInfo);
+              setLoggedInUser(newUserInfo);
               history.replace(from)
            
           })
@@ -170,8 +170,8 @@ const Login = () => {
                     {newUser &&   <button class="btn btn-warning input-button" >Create an account </button>  }
                  </form>
                  <div className="text-center">
-                     {!newUser &&  <span style={{marginRight:"8px",fontSize:"20px"}}>Don't have an account?</span>}
-                     {newUser && <span style={{marginRight:"8px" ,fontSize:"20px"}}>Already have an account</span>}
+                     {!newUser &&  <span className="newUser">Don't have an account?</span>}
+                     {newUser && <span className="newUser">Already have an account</span>}
 
                  <input class="checkbox" type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" /> 
                      {newUser &&  <label htmlFor="newUser" class="text-primary">Login</label>  }  

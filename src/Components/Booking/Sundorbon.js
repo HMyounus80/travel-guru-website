@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../Logo.png';
 import Home from '../Home/Home.css';
 import Rectangle from '../../Image/Rectangle.png';
-import { Link } from 'react-router-dom';
+import { Link , useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Sundorbon = () => {
+    const history = useHistory()
+    const handleFormSubmit = (e) => {
+        e.preventDefault()
+        history.push("/booking")
+    }
     const classes = useStyles();
     return (
        
@@ -60,11 +65,12 @@ const Sundorbon = () => {
                       <button className="btn btn-warning">Booking --></button>
                   </div>
                    <div className="col-md-6">
+                   <form onSubmit={handleFormSubmit}>
                         <div className="input-aria">
                             <p>Origin</p>
-                            <input class="input-type" type="text" name="" />
+                            <input class="input-type" type="text" name="" required/>
                             <p>Destination</p>
-                            <input class="input-type" type="text" />
+                            <input class="input-type" type="text" required/>
                             <div className="row">
                                 <div className="col-md-6">
                                     <p>From</p>
@@ -96,8 +102,9 @@ const Sundorbon = () => {
                                 </div>
                             </div>
                             <br/>
-                            <Link to="/booking"><input className="input-button" type="Start Booking" value="Start Booking"/></Link>
+                            <input className="input-button" type="submit" value="Start Booking"/>
                             </div>
+                            </form>
                             <br/>
               </div>
           </div>

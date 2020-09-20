@@ -15,13 +15,14 @@ import Sundorbon from './Components/Booking/Sundorbon';
 import Login from './Components/Login/Login';
 import Booking from './Components/Booking/Booking';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import NoMatch from './Components/NoMatch/NoMatch';
 
 export const UserContext = createContext();
 
 function App() {
-  const [LoginUser, setLoginUser] = useState({})
+  const [loggedInUser, setLoggedInUser] = useState({})
   return (
-    <UserContext.Provider value={[LoginUser, setLoginUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
         <Switch>
             <Route path="/home">
@@ -44,6 +45,9 @@ function App() {
             </Route>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="*">
+              <NoMatch/>
             </Route>
           </Switch>
     </Router>

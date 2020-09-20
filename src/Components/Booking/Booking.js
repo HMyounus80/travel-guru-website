@@ -6,6 +6,7 @@ import Rectangle1 from '../../Image/Rectangle 26.png'
 import star_1_ from "../../Icon/star_1_.png";
 import Rectangle2 from "../../Image/Rectangle 27.png";
 import Rectangle3 from "../../Image/Rectangle 28.png";
+import GoogleMap from '../GoogleMap/GoogleMap';
 
 const Booking = () => {
     const imgStyle = {
@@ -37,7 +38,7 @@ const Booking = () => {
         </nav>
         <hr/>
         <div className="container">
-            <p>252 stys Apr 13-17-3 guests</p>
+            <p>252 stays Apr 13-17-3 guests</p>
             <h4>Stay in Cox's Bazar</h4>
                 <div className="row">
                     <div className="col-md-6">
@@ -87,7 +88,7 @@ const Booking = () => {
                         </div>
                     </div>
              <div className="col-md-6">
-                 
+                  <GoogleMap></GoogleMap>
              </div>
          </div>
         </div>

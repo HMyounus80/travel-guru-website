@@ -24,12 +24,12 @@ const Home = () => {
             <Link to="/home" class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></Link>
         </li>
         <li class="nav-item">
-            <Link  class="nav-link text-white" href="#">Booking</Link>
+            <Link to="/booking"  class="nav-link text-white" href="#">Booking</Link>
         </li>
         <li class="nav-item">
             <Link class="nav-link text-white" href="#">Pricing</Link>
         </li>
-            <button className="btn btn-warning"><Link>Login</Link></button>
+            <Link to="/login"><button className="btn btn-warning">Login</button></Link>
         </ul>
     </div>
     </nav>
