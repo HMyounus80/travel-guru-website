@@ -13,13 +13,15 @@
 
 
 ### Usage Technology:
-* HTML5
-* CSS3
-* BOOTSTRAP
+
 * JAVASCRIPT
 * React JS
 * Material UI
 * Firebase Auth
+* HTML5
+* CSS3
+* BOOTSTRAP
+
 
 
 
