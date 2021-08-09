@@ -15,8 +15,7 @@
 ### Usage Technology:
 
 
-### `yarn start`
-* JAVASCRIPT
+### `JAVASCRIPT`
 * React JS
 * Material UI
 * Firebase Auth
